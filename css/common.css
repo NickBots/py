@@ -1,0 +1,168 @@
+a {
+  margin: 0;
+  font-size: 1em;
+  font-family: 'Roboto';
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: whitesmoke;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #02588e;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #0071b8;
+  color: white;
+}
+
+#navbar a.active {
+  background-color: #02588e;
+  color: white;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky+.content {
+  padding-top: 60px;
+}
+
+#pageFooter {
+  background-color: #02588e
+}
+
+#pageFooter {
+  overflow: hidden;
+  font-size: .8em;
+  color: white;
+}
+
+#pageFooter .column {
+  padding: 10px;
+}
+
+.logoFooter {
+  height: 70%;
+  width: 60%;
+}
+
+#pageFooter ul {
+  list-style-type: none;
+  text-align: left;
+}
+
+#pageFooter li {
+  padding: 3px;
+}
+
+#pageFooter a {
+  text-align: left;
+  color: white;
+  text-decoration: none;
+}
+
+.footerColumn {
+  float: left;
+  width: 33.3333%;
+}
+
+@media (max-width: 768px) {
+  .footerColumn {
+    float: none;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .footerColumn ul {
+    list-style-position: inside;
+    display: inline-block;
+  }
+}
+
+
+
+
+
+
+
+
+
+dl {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.function{
+  text-align: left;
+  width: 70%;
+  margin-top: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  margin-left: auto;
+}
+
+dt code{
+  font-size: 1.3em;
+  background-color: gainsboro;
+}
+
+.code-ex{
+  padding: 10px;
+  background-color: gainsboro;
+}
+
+h2{
+  color: #02588e;
+  size: 5em;
+}
+
+dd{
+  margin: 10px;
+}
+
+#page-guide{
+  font: roboto;
+  text-align: left;
+  background-color: whitesmoke;
+  padding: 10px;
+  margin: auto;
+  margin-top: 20px;
+  width: 500px;
+}
+
+#page-guide ul{
+}
+
+a{
+  margin-bottom: 5px;
+  text-decoration: none;
+  color: #02588e;
+}
+
+a:visited {
+  color: #02588e;
+}
+
+a:hover{
+  text-decoration: underline;
+}

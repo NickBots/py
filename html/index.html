@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Homepage - PyPlutchik</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="../js/test.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="../js/plutchik.js"></script>
+    <script src="../js/common.js"></script>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link type="text/css" rel="stylesheet" href="../css/plutchik.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+
+    <div class="header">
+        <img class="logoHeader" alt="PyPlutchik" src="../resources/logo.png">
+        <p class="logoHeader"> The package for text sentiment analysis with python </p>
+    </div>
+
+    <div id="navbar">
+        <a class="active" href="#home">Home</a>
+        <a href="./install.html">Install</a>
+        <a href="./documentation.html">Documentation</a>
+        <a href="./learn.html">Learn</a>
+        <a href="./contribute.html">Contribute</a>
+    </div>
+
+
+    <div class="feature">
+
+        <div class="column">
+            <div class="featureBox">
+                <h3>LOREM IPSUM</h3>
+                <p>Lorem ipsum dolor sit amet</p>
+            </div>
+            <div class="featureBox">
+                <h3>LOREM IPSUM</h3>
+                <p>Lorem ipsum dolor sit amet</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="featureBox">
+                <h3>LOREM IPSUM</h3>
+                <p>Lorem ipsum dolor sit amet</p>
+            </div>
+            <div class="featureBox">
+                <h3>LOREM IPSUM</h3>
+                <p>Lorem ipsum dolor sit amet</p>
+            </div>
+        </div>
+
+        <div class="column_1">
+            <div class="featureBox">
+                <h3>LOREM IPSUM</h3>
+                <p>Lorem ipsum dolor sit amet</p>
+            </div>
+            <div class="featureBox">
+                <h3>LOREM IPSUM</h3>
+                <p>Lorem ipsum dolor sit amet</p>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <h3>Try PyPlutchik now!</h3>
+    <div id="liveTest">
+
+        <div class="tab">
+            <button class="tabButton" onclick="openTestPanel(event, 'TextUpload')">Text</button>
+            <button class="tabButton" onclick="openTestPanel(event, 'FileUpload')">Upload file</button>
+            <button class="tabButton" onclick="openTestPanel(event, 'AccSubmit')">Tweet</button>
+            <button class="tabButton" onclick="openTestPanel(event, 'RandomGeneration')">Random flower</button>
+        </div>
+
+
+        <div id="FileUpload" class="tabElement">
+            <p>Upload text(Only .txt allowed): </p>
+            <input id="uploadText" type="file" name="uploadPreview">
+            <button id="upload">UPLOAD</button><br>
+        </div>
+
+        <div id="AccSubmit" class="tabElement">
+            <input type="text" id="query" name="query" placeholder="@repubblica">
+            <button id="search">Search</button><br>
+        </div>
+
+        <div id="TextUpload" class="tabElement">
+            <textarea id="userInput" placeholder="Insert text here" maxlength="2000"></textarea><br>
+            <button id="submitUserInput">Submit</button>
+        </div>
+
+        <div id="RandomGeneration" class="tabElement">
+            <button id="generate_random">Generate random emotion value</button>
+        </div>
+
+        
+
+    </div>
+    <div id="chart"></div>
+
+    <link href="../css/plutchik.css" type="text/css" rel="stylesheet" />
+    <script src="../js/plutchik.js"></script>
+
+    <br>
+    <br>
+    <div id="pageFooter">
+        <div class="footerColumn">
+            <img class="logoFooter" alt="PyPlutchik" src="../resources/logo_white.png">
+            <p>By Alfonso Semeraro, Salvatore Vilella, Giancarlo Ruffo</p>
+        </div>
+        <div class="footerColumn">
+            <ul>
+                <li><a href="./aboutus.html">About us</a></li>
+                <li><a href="./documentation.html">Documentation</a></li>
+                <li><a href="./citing.html">Citing PyPlutchik</a></li>
+                <li><a href="./learn.html">Learn</a></li>
+                <li><a href="./roadmap.html">Roadmap</a></li>
+            </ul>
+        </div>
+        <div class="footerColumn">
+            <ul>
+                <li><a href="./help.html">Get help</a></li>
+                <li><a href="./install.html">Terms of use</a></li>
+                <li><a href="./documentation.html">Privacy</a></li>
+                <li><a href="./learn.html">Press Kit</a></li>
+                <li><a href="./contribute.html">Contribute</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
