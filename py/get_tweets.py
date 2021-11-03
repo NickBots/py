@@ -22,4 +22,5 @@ def tweetsRetriever(username):
         texts += [tw._json['text'] for tw in tweets]
         if i == 4: 
             break
+    texts = ' '.join(texts)
     return texts

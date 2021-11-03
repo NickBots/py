@@ -10,6 +10,8 @@ import formamentis_edgelist as fme
 from language_dependencies import _load_dictionary
 import emo_scores as es
 import draw_plutchik as dp
+from language_dependencies import load_antonyms
+from nltk.corpus import wordnet as wn
 
 class EmoScores:
     
@@ -18,6 +20,9 @@ class EmoScores:
         self.spacy_model = self.load_spacy(spacy_model, language)
         self.emotion_lexicon = _load_dictionary(language)
         self.emotion_lexicon = self.emotion_lexicon.groupby('word')['emotion'].apply(list).to_dict()
+        self.antonyms = load_antonyms(language)
+        self.wn = wn
+        
         
         if emotion_model == 'plutchik':
             self.emotionslist = ['anger', 'trust', 'surprise', 'disgust', 'joy', 'sadness', 'fear', 'anticipation']
@@ -159,8 +164,10 @@ class EmoScores:
     def formamentis_network(self, text, 
                              language = None, 
                              spacy_model = None,
+                             target_word = None,
                              keepwords = [],
                              stopwords = [],
+                             antonyms = None,
                              max_distance = 2):
         
         """
@@ -177,6 +184,10 @@ class EmoScores:
                 Catalan, Chinese, Danish, Dutch, English, French, German, Greek, Japanese, Italian, Lithuanian,
                 Macedonian, Norvegian, Polish, Portuguese, Romanian, Russian, Spanish.
             Limited support for other languages is available. By default, English will be loaded.
+            
+        *target_word*:
+            A string or None. If a string and method is 'formamentis', it will be computed the emotion distribution
+            only of the neighborhood of 'target_word' in the formamentis network.
             
         *keepwords*:
             A list. Words that shall be included in formamentis networks regardless from their part of speech. Default is an empty list.
@@ -204,9 +215,18 @@ class EmoScores:
             language = self.language
         if not spacy_model:
             spacy_model = self.spacy_model
-                        
+        if not antonyms:
+            antonyms = self.antonyms
+            
+        
+        
         return fme.get_formamentis_edgelist(text, language = language, spacy_model = spacy_model, 
-                                            keepwords = [], stopwords = [], max_distance = max_distance)
+                                            target_word = target_word,
+                                            keepwords = keepwords, 
+                                            stopwords = stopwords, 
+                                            antonyms = antonyms,
+                                            wn = self.wn,
+                                            max_distance = max_distance)
         
     
     def emotions(self, obj, 
@@ -284,6 +304,7 @@ class EmoScores:
         *emotion_model*:
             A model of emotions. Default is 'plutchik', that loads as emotions
                 ['joy', 'trust', 'fear', 'surprise', 'sadness', 'disgust', 'anger', 'anticipation']
+        
                 
         Returns:
         ----------
@@ -295,7 +316,9 @@ class EmoScores:
         emotionslist = self.emotionslist if not emotionslist else emotionslist
         language = self.language if not language else language
         spacy_model = self.spacy_model if not spacy_model else spacy_model
-                
+        antonyms = self.antonyms if not antonyms else antonyms
+        
+        
         return es.count_emotions(obj = obj, 
                        emotion_lexicon = emotion_lexicon, 
                        normalization_strategy = normalization_strategy, 
@@ -308,6 +331,7 @@ class EmoScores:
                        antonyms = antonyms,
                        method = method,
                        target_word = target_word,
+                       wn = self.wn,
                        emotion_model = emotion_model).emotions
         
         
@@ -408,6 +432,7 @@ class EmoScores:
         spacy_model = self.spacy_model if not spacy_model else spacy_model
         emotion_lexicon = self.emotion_lexicon if not emotion_lexicon else emotion_lexicon
         emotion_model = self.emotion_model if not emotion_model else emotion_model
+        antonyms = self.antonyms if not antonyms else antonyms
         
         if not baseline:
             if not self.baseline:
@@ -427,6 +452,7 @@ class EmoScores:
            n_samples = n_samples, 
            method = method,
            target_word = target_word,
+           wn = self.wn,
            emotion_model = emotion_model)
         
     

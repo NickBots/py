@@ -1,0 +1,65 @@
+/* QUESTO DIVENTA form.css */
+
+input[type=text]:not(#query),
+input[type=email],
+textarea {
+    width: 60%;
+    height: 150px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-bottom: 5pt solid;
+    border-image-source: linear-gradient(to left, #a6b1b8 0%, #02588e  100%);
+    border-image-slice: 1;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: #02588e;
+    outline-style: none;
+}
+
+form{
+    margin: 60px;
+}
+
+input[type=text]:not(#query),
+input[type=email]{
+    height: auto;
+}
+
+#send{
+    margin: 20px 0 10px 0;
+    padding: 8px 20px 8px 20px;
+    color: #02588e;
+    border: 1.5px solid #02588e;
+    background-color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    outline-style: none;
+}
+
+#send:hover{
+    border: none;
+  background-color: #02588e;
+  color: white;
+}
+
+#message {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    padding: 16px;
+    position: fixed;
+    z-index: 10;
+    left: 50%;
+    top: 30px;
+}
+
+
+#message.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;   
+}

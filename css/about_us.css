@@ -1,0 +1,51 @@
+#bioContainer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.bio{
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 10px;
+    overflow: auto;
+}
+
+.bio img {
+    float: left;
+    width: 120px;
+    height: auto;
+    margin: 30px;
+  }
+
+  .bio p{
+      text-align: left;
+      padding: 20px;
+  }
+
+  .bio::after{
+    content: " ";
+    position: absolute;
+    left: 50%;
+    margin-left: -400px;
+    width: 800px;;
+    height: 1.5px;
+    background-color: #02588e;
+  }
+
+  .bio:last-child::after{
+    background-color: transparent;
+  }
+
+  @media (max-width: 650px) {
+    .bio {
+      display: block;
+    }
+  }
+
+  @media (min-width: 650px) {
+    .bio {
+      display: inline;
+    }
+  }
