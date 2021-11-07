@@ -1,7 +1,6 @@
 $(function () {
 
     var modalNRC = $("#modalNRCLexicon");
-    console.log(modalNRC);
     var modalFM = $("#modalFormaMentis");
 
     var linkNRC = $(".refNRC");

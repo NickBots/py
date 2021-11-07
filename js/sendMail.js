@@ -5,7 +5,7 @@ $(function () {
         var email = $("#useremail").val();
         var message = $("#mail").val();
         if (validateMail(email)) {
-            if (message == null) {
+            if (message != "") {
                 $.post({
                     url: "http://127.0.0.1:5000/sendEmail",
                     datatype: "json",
