@@ -29,6 +29,7 @@
         <img src="http://arcs.di.unito.it/wp-content/uploads/2018/12/salvatore_vilella.jpg" alt="Salvatore Vilella">
         <p><a href="http://www.di.unito.it/~vilella/" data-type="URL" data-id="http://www.di.unito.it/~vilella/">Salvatore <strong>Vilella</strong> </a>is a <strong>PhD student</strong> at the Department of Computer Science, Università degli Studi di Torino, and a Junior Researcher at <strong>ISI Foundation</strong>. He obtained his Bachelor Degree in <strong>Physics</strong> at Università del Salento, and his Master Degree in <strong>Physics of Complex Systems</strong> at Università degli Studi di Torino. His research interests and skills include data-driven analysis and modeling of <strong>complex systems</strong>, <strong>complex networks</strong>, <strong>data mining</strong> and <strong>data analytics</strong>.<br><br><br><br></p>
     </div>
+</div>
 
 
     <?php include("footer.html") ?>
