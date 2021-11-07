@@ -52,7 +52,7 @@ input[type=email]{
     border-radius: 20px;
     padding: 16px;
     position: fixed;
-    z-index: 10;
+    z-index: 12;
     left: 50%;
     top: 30px;
 }
