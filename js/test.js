@@ -6,7 +6,6 @@ $(function () {
         addLoading();
         var searchString = $("#query").val();
         var lang = $("#lang").val();
-        console.log(lang);
         $.post({
             url: "http://127.0.0.1:5000/getTweets",
             datatype: "json",
