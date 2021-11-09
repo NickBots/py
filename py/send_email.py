@@ -3,7 +3,7 @@ import certifi
 from email.message import EmailMessage
 
 
-def sendMessage(username, email, message):
+def send_message(username, email, message):
     port = 465
     content = username+" sent the following message: \n\n"+message+"\n\n--------\nEnd of message"
     context = ssl.create_default_context(cafile=certifi.where())

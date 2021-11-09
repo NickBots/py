@@ -10,7 +10,7 @@ import tweepy
 import sys
 
 
-def tweetsRetriever(username):
+def retrieve_tweets(username):
     auth = tweepy.OAuthHandler(
         'O9qiJasA7qZy0aY13H5ben5GF', 'vKL8wQykDky7ga4NEV5ta4tTUlYktqcWkTajXL1eKojjvtEWVZ')
     auth.set_access_token('72806677-GjaymBCl8sybBHQ9PPzK89nMqV7NYFalbtQA145Wd',
